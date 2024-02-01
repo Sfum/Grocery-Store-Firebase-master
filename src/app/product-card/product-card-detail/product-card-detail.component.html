@@ -1,0 +1,19 @@
+<div class="product-card__container mat-elevation-z20">
+    <div *ngIf="product">
+        <div class="product-card__shell">
+<!--            <img class="product-card__image" [src]="product.product_image" width="200"-->
+<!--                 alt="Product Image"/>-->
+            <div class="product-card-bottom__wrapper">
+              <div class="product-card__left">
+                <img class="product-card__image" [src]="product.product_image" width="160px" height="160px">
+              </div>
+              <div class="product-card__right">
+                <span class="font-primary">{{ product.product_name | slice:0:13 }}...</span>
+                <hr class="product-card__line">
+                <span class="font-secondary">{{ product.product_description }}</span>
+                <hr class="product-card__line">
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

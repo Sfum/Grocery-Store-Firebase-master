@@ -13,6 +13,8 @@
                 <span class="font-secondary">{{ product.product_description }}</span>
                 <hr class="product-card__line">
               </div>
+              <button [routerLink]="['/', product.productId]">Edit</button>
+
             </div>
         </div>
     </div>

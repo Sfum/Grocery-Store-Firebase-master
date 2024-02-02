@@ -1,0 +1,18 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label for="productName">Product Name:</label>
+  <input type="text" id="productName" formControlName="product_name" required>
+
+  <label for="productDescription">Product Description:</label>
+  <textarea id="productDescription" formControlName="product_description" required></textarea>
+
+  <label for="seqNo">Sequence Number:</label>
+  <input type="number" id="seqNo" formControlName="seqNo" required>
+
+  <label for="supplierId">Supplier ID:</label>
+  <input type="number" id="supplierId" formControlName="supplierId" required>
+
+  <label for="productImage">Product Image URL:</label>
+  <input type="text" id="productImage" formControlName="product_image" required>
+
+  <button type="submit" [disabled]="productForm.invalid">Update Product</button>
+</form>

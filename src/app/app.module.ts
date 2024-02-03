@@ -1,19 +1,20 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from "../environments/environment";
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductCardDetailComponent } from './product-card/product-card-detail/product-card-detail.component';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {AngularFireModule} from '@angular/fire/compat';
+import {environment} from "../environments/environment";
+import {ProductCardComponent} from './product-card/product-card.component';
+import {ProductCardDetailComponent} from './product-card/product-card-detail/product-card-detail.component';
 import {RouterLink} from "@angular/router";
-import { CreateProductComponent } from './create-product/create-product.component';
+import {CreateProductComponent} from './create-product/create-product.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { ProductEditComponent } from './product-edit/product-edit.component';
+import {ProductEditComponent} from './product-edit/product-edit.component';
+import {ProductViewComponent} from './product-view/product-view.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProductCardDetailComponent,
     CreateProductComponent,
     ProductEditComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,
@@ -34,4 +36,5 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

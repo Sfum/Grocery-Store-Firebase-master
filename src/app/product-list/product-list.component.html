@@ -1,4 +1,4 @@
-<mat-table [dataSource]="products">
+<mat-table [dataSource]="dataSource">
   <!-- Product ID Column -->
   <ng-container matColumnDef="productId">
     <mat-header-cell *matHeaderCellDef> Product ID </mat-header-cell>
@@ -27,11 +27,10 @@
   <ng-container matColumnDef="supplierId">
     <mat-header-cell *matHeaderCellDef> Supplier ID </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.supplierId }} </mat-cell>
-
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
 
-
+<mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>

@@ -21,6 +21,9 @@ import {MatButton} from "@angular/material/button";
 import {MatInput} from "@angular/material/input";
 
 import {ProductListComponent} from "./product-list/product-list.component";
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+
 import {
   MatCell,
   MatCellDef,
@@ -60,7 +63,9 @@ import {
     MatHeaderRow,
     MatRow,
     MatHeaderRowDef,
-    MatRowDef
+    MatRowDef,
+    MatPaginatorModule,
+    MatTableModule,
   ],
   providers: [
     provideAnimationsAsync()

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -20,6 +20,7 @@ export class ProductEditComponent implements OnInit {
     private router: Router
   ) {
     this.productForm = this.fb.group({
+      productId: ['', Validators.required],
       product_name: ['', Validators.required],
       product_description: ['', Validators.required],
       seqNo: [null, Validators.required],
@@ -35,24 +36,28 @@ export class ProductEditComponent implements OnInit {
   }
 
   loadProduct() {
-    this.productService.getProduct(this.productId).subscribe((product) => {
-      if (product) {
-        this.productForm.patchValue(product);
-      } else {
-        console.error('Product not found');
-        // Handle not found case, maybe redirect to a 404 page or show an error message
+    this.productService.getProduct(this.productId).subscribe(
+      (product) => {
+        if (product) {
+          // Update the form values with the retrieved product data
+          this.productForm.patchValue(product);
+        } else {
+          console.error('Product not found');
+        }
+      },
+      (error) => {
+        console.error('Error retrieving product: ', error);
       }
-    });
+    );
   }
 
   onSubmit() {
     if (this.productForm.valid) {
-      const updatedProduct = this.productForm.value;
-      this.productService.updateProduct(this.productId, updatedProduct).subscribe(
+      this.productService.updateProduct(this.productId, this.productForm.value).subscribe(
         () => {
           console.log('Product updated successfully.');
           // Handle success, maybe redirect to the product details page
-          this.router.navigate(['/'])
+          this.router.navigate(['/']);
         },
         (error) => {
           console.error('Error updating product: ', error);

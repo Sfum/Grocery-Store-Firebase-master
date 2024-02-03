@@ -1,5 +1,6 @@
 export interface Product {
-  productId: number,
+  id: any;
+  productId: string,
   product_name: string,
   product_description: string,
   seqNo: number

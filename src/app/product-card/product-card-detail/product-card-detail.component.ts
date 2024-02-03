@@ -10,4 +10,6 @@ export class ProductCardDetailComponent {
 
   @Input() product!: Product
 
+
+
 }

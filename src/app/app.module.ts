@@ -15,6 +15,10 @@ import {ProductEditComponent} from './product-edit/product-edit.component';
 import {ProductViewComponent} from './product-view/product-view.component';
 
 import {AppRoutingModule} from './app-routing.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatCard} from "@angular/material/card";
+import {MatButton} from "@angular/material/button";
+import {MatInput} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -31,9 +35,14 @@ import {AppRoutingModule} from './app-routing.module';
     AngularFirestoreModule,
     RouterLink,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCard,
+    MatButton,
+    MatInput
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

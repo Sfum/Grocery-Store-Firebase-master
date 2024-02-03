@@ -20,6 +20,17 @@ import {MatCard} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {MatInput} from "@angular/material/input";
 
+import {ProductListComponent} from "./product-list/product-list.component";
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
+  MatTable
+} from "@angular/material/table";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +38,8 @@ import {MatInput} from "@angular/material/input";
     ProductCardDetailComponent,
     CreateProductComponent,
     ProductEditComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +50,17 @@ import {MatInput} from "@angular/material/input";
     AppRoutingModule,
     MatCard,
     MatButton,
-    MatInput
+    MatInput,
+    MatHeaderCell,
+    MatCell,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatHeaderRow,
+    MatRow,
+    MatHeaderRowDef,
+    MatRowDef
   ],
   providers: [
     provideAnimationsAsync()

@@ -11,9 +11,9 @@ import {Product} from "../models/product";
 export class ProductCardComponent implements OnInit {
   productCollection$!: Observable<Product[]>;
 
-  constructor(private firestoreService: ProductService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productCollection$ = this.firestoreService.getProductCollection();
+    this.productCollection$ = this.productService.getProductCollection();
   }
 }

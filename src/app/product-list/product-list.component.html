@@ -1,3 +1,6 @@
+
+<button mat-raised-button class="font-small cell_hover button" [routerLink]="['/create-product']">Create New Product</button>
+
 <mat-table [dataSource]="dataSource" >
   <!-- Product ID Column -->
   <ng-container matColumnDef="productId">
@@ -16,6 +19,7 @@
     <mat-header-cell *matHeaderCellDef> Product Description </mat-header-cell>
     <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.productId]"> {{ product.product_description }} </mat-cell>
   </ng-container>
+
 
   <!-- Sequence Number Column -->
   <ng-container matColumnDef="seqNo">

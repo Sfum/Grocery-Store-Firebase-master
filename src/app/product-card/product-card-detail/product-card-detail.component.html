@@ -6,7 +6,9 @@
           <img class="product-card__image" [src]="product.product_image" width="130px" height="130px">
           <div class="button__field">
             <button mat-raised-button class="font-small" [routerLink]="['/', 'view', product.productId]">Details</button>
-            <button mat-raised-button class="font-small" [routerLink]="['/', 'view', product.productId]">Buy Now</button>
+            <button mat-raised-button class="font-small" [routerLink]="['/', 'view', product.productId]">
+              <mat-icon class="icon">shopping_cart</mat-icon>
+            </button>
           </div>
         </div>
         <div class="product-card__right">
@@ -19,7 +21,6 @@
           <span class="font-secondary">ID: {{ product.productId }}</span>
           <hr class="product-card__line">
           <div class="icon__list">
-            <mat-icon class="icon">shopping_cart</mat-icon>
             <mat-icon class="icon">favorite</mat-icon>
             <mat-icon class="icon">list</mat-icon>
             <mat-icon class="icon">phone</mat-icon>

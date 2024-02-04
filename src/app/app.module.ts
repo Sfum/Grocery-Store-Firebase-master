@@ -34,6 +34,8 @@ import {
   MatTable
 } from "@angular/material/table";
 import {MatIcon} from "@angular/material/icon";
+import {MatDrawer, MatDrawerContainer} from "@angular/material/sidenav";
+import {NavigationComponent} from "./shared/navigation/navigation.component";
 
 @NgModule({
   declarations: [
@@ -68,6 +70,9 @@ import {MatIcon} from "@angular/material/icon";
     MatPaginatorModule,
     MatTableModule,
     MatIcon,
+    MatDrawerContainer,
+    MatDrawer,
+    NavigationComponent,
   ],
   providers: [
     provideAnimationsAsync()

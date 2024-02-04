@@ -1,8 +1,27 @@
-<mat-card class="container" *ngIf="product">
-  <h2>{{ product.product_name }}</h2>
-  <img [src]="product.product_image" width="140px" alt="{{ product.product_name }} Image">
-  <p>{{ product.product_description }}</p>
-  <p>Product ID: {{ product.productId }}</p>
-  <p>Sequence Number: {{ product.seqNo }}</p>
-  <p>Supplier ID: {{ product.supplierId }}</p>
+<mat-card class="product-card__container mat-elevation-z20">
+  <div *ngIf="product">
+    <div class="product-card__shell">
+      <div class="product-card-bottom__wrapper">
+        <div class="product-card__left">
+          <img class="product-card__image" [src]="product.product_image" width="130px" height="130px">
+        </div>
+        <div class="product-card__right">
+          <span class="font-primary">{{ product.product_name | slice:0:23 }}...</span>
+          <hr class="product-card__line">
+          <span class="font-secondary">{{ product.product_description | slice:0:120 }}</span>
+          <hr class="product-card__line">
+          <span class="font-secondary">Manufactured by {{ product.supplierId }}</span>
+          <hr class="product-card__line">
+          <span class="font-secondary">ID: {{ product.productId }}</span>
+          <hr class="product-card__line">
+          <div class="icon__list">
+            <mat-icon class="icon">shopping_cart</mat-icon>
+            <mat-icon class="icon">favorite</mat-icon>
+            <mat-icon class="icon">list</mat-icon>
+            <mat-icon class="icon">phone</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </mat-card>

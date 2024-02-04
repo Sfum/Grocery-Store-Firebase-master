@@ -1,18 +1,24 @@
+@use 'src/styles.sass'
+
 .product-card-bottom__wrapper
   display: grid
-  grid-template-columns: 0.3fr 0.7fr
+  grid-template-columns: 40% 60%
+  height: 220px
 
 .product-card__left
   grid-column: 1/2
   margin: 20px
 
-
 .product-card__right
   grid-column: 2/3
-  margin: 20px 0
+  margin: 20px 20px 20px
 
 .button__field
-  margin: 20px
+  display: flex
+  flex-direction: row
 
 button
   width: 100%
+
+.icon
+  font-size: 16px

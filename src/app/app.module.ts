@@ -33,6 +33,7 @@ import {
   MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
   MatTable
 } from "@angular/material/table";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import {
     MatRowDef,
     MatPaginatorModule,
     MatTableModule,
+    MatIcon,
   ],
   providers: [
     provideAnimationsAsync()

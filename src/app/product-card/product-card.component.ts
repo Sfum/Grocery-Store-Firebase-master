@@ -9,6 +9,7 @@ import {Product} from "../models/product";
   styleUrls: ['./product-card.component.sass']
 })
 export class ProductCardComponent implements OnInit {
+
   productCollection$!: Observable<Product[]>;
 
   constructor(private productService: ProductService) {}

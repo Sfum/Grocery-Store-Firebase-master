@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 import firebase from 'firebase/compat/app';
 
 @Injectable({
@@ -24,5 +24,12 @@ export class AuthService {
 
   signOut() {
     return this.afAuth.signOut();
+  }
+
+  isAdmin(): Observable<boolean> {
+    return this.user$.pipe(
+      // Perform logic to determine if user is an admin
+      map(user => user && user.email === 'pulsedrecords@gmail.com')
+    );
   }
 }

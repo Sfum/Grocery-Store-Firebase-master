@@ -1,14 +1,8 @@
 <app-navigation></app-navigation>
-<app-user-account></app-user-account>
-<app-logout></app-logout>
+<router-outlet></router-outlet>
 
-<div *ngIf="user$ | async as user; else notAuthenticated">
-  <!-- Render product-card component -->
-  <router-outlet></router-outlet>
-</div>
 
-<ng-template #notAuthenticated>
-  <p>Please log in to view the product card.</p>
-</ng-template>
+
+
 
 

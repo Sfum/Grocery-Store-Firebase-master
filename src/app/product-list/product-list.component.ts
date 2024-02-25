@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { MatTableDataSource } from '@angular/material/table';

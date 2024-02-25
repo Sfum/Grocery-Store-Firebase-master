@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import {environment} from "../environments/environment";
 import {ProductCardComponent} from './product-card/product-card.component';
@@ -28,6 +29,7 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
 
+import {ProductShellComponent} from './product-shell/product-shell.component';
 
 import {
   MatCell,
@@ -53,7 +55,8 @@ import {LogoutComponent} from "./auth/logout/logout.component";
     CreateProductComponent,
     ProductEditComponent,
     ProductViewComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductShellComponent
   ],
   imports: [
     BrowserModule,
@@ -86,10 +89,15 @@ import {LogoutComponent} from "./auth/logout/logout.component";
     AngularFireDatabaseModule,
     UserAccountComponent,
     SignUpComponent,
-    LogoutComponent
+    LogoutComponent,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()
+  ],
+  exports: [
+    ProductCardComponent,
+    ProductListComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {UserAccountComponent} from "../auth/user-account/user-account.component";
+
 
 @Component({
   selector: 'app-product-edit',
@@ -17,7 +20,8 @@ export class ProductEditComponent implements OnInit {
     private fb: FormBuilder,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+
   ) {
     this.productForm = this.fb.group({
       productId: ['', Validators.required],
@@ -39,7 +43,6 @@ export class ProductEditComponent implements OnInit {
     this.productService.getProduct(this.productId).subscribe(
       (product) => {
         if (product) {
-          // Update the form values with the retrieved product data
           this.productForm.patchValue(product);
         } else {
           console.error('Product not found');
@@ -57,7 +60,7 @@ export class ProductEditComponent implements OnInit {
         () => {
           console.log('Product updated successfully.');
           // Handle success, maybe redirect to the product details page
-          this.router.navigate(['products-list']);
+          this.router.navigate(['/']);
         },
         (error) => {
           console.error('Error updating product: ', error);

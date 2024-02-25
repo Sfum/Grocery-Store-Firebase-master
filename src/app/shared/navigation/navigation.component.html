@@ -1,6 +1,8 @@
 <div class="container">
-  <div class="navigation">
-    <button class="button" mat-raised-button [routerLink]="['/products-list']">Admin</button>
-    <button class="button" mat-raised-button [routerLink]="['/']">Shop</button>
+  <div>
+  </div>
+  <div class="auth-field">
+    <button mat-raised-button *ngIf="!(user$| async )" (click)="openDialog()">Login</button>
+    <app-logout></app-logout>
   </div>
 </div>

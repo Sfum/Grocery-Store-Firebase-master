@@ -1,0 +1,27 @@
+<div class="component-body">
+  <ng-container *ngIf="user$ | async as user; else notAuthenticated">
+    <div class="component-body">
+      <div *ngIf="isAdmin; else notAdmin">
+        <h1 class="margin-auto">Welcome to the Admin Dashboard</h1>
+        <div class="product-list">
+            <app-product-list></app-product-list>
+        </div>
+      </div>
+      <ng-template #notAdmin>
+        <div class="product-card">
+          <div class="product-card-left">
+            <app-product-card *ngIf="user && user.uid"></app-product-card>
+          </div>
+          <div class="product-card-right">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </ng-container>
+  <ng-template #notAuthenticated>
+    <div class="component-body">
+      <p class="margin-auto font-primary">Log in to explore our product catalogue:</p>
+    </div>
+  </ng-template>
+</div>

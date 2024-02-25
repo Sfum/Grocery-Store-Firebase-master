@@ -1,16 +1,30 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {MatButton} from "@angular/material/button";
+import {AsyncPipe, NgIf} from "@angular/common";
+import {Observable} from "rxjs";
+import firebase from "firebase/compat";
 
 @Component({
   selector: 'app-logout',
   standalone: true,
-  imports: [],
+  imports: [
+    MatButton,
+    AsyncPipe,
+    NgIf
+  ],
   templateUrl: './logout.component.html',
   styleUrl: './logout.component.sass'
 })
-export class LogoutComponent {
+export class LogoutComponent implements  OnInit{
+
+  user$: Observable<firebase.User>;
 
   constructor(private authService: AuthService) { }
+
+  ngOnInit() {
+    this.user$ = this.authService.user$;
+  }
 
   signOut() {
     this.authService.signOut()

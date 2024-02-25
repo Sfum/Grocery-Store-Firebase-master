@@ -1,18 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {MatButton} from "@angular/material/button";
-import {AsyncPipe, NgIf} from "@angular/common";
 import {Observable} from "rxjs";
 import firebase from "firebase/compat";
 
 @Component({
   selector: 'app-logout',
-  standalone: true,
-  imports: [
-    MatButton,
-    AsyncPipe,
-    NgIf
-  ],
   templateUrl: './logout.component.html',
   styleUrl: './logout.component.sass'
 })

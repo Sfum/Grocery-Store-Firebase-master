@@ -2,7 +2,8 @@
   <div>
   </div>
   <div class="auth-field">
-    <button mat-raised-button *ngIf="!(user$| async )" (click)="openDialog()">Login</button>
+    <button mat-raised-button class="nav-button" *ngIf="!(user$| async )" (click)="openDialog()">Login</button>
+    <button mat-raised-button class="nav-button" *ngIf="!(user$| async )" (click)="openDialogRegister()">SignUp</button>
     <app-logout></app-logout>
   </div>
 </div>

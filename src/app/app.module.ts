@@ -3,13 +3,12 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
 import {environment} from "../environments/environment";
 import {ProductCardComponent} from './product-card/product-card.component';
 import {ProductCardDetailComponent} from './product-card/product-card-detail/product-card-detail.component';
 import {RouterLink} from "@angular/router";
 import {CreateProductComponent} from './create-product/create-product.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ProductEditComponent} from './product-edit/product-edit.component';
 import {ProductViewComponent} from './product-view/product-view.component';
 
@@ -56,7 +55,12 @@ import {LogoutComponent} from "./auth/logout/logout.component";
     ProductEditComponent,
     ProductViewComponent,
     ProductListComponent,
-    ProductShellComponent
+    ProductShellComponent,
+    UserAccountComponent,
+    SignUpComponent,
+    LogoutComponent,
+    NavigationComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -83,21 +87,16 @@ import {LogoutComponent} from "./auth/logout/logout.component";
     MatIcon,
     MatDrawerContainer,
     MatDrawer,
-    NavigationComponent,
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    UserAccountComponent,
-    SignUpComponent,
-    LogoutComponent,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()
   ],
   exports: [
-    ProductCardComponent,
-    ProductListComponent
   ],
   bootstrap: [AppComponent]
 })

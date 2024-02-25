@@ -5,12 +5,12 @@
         <h1 class="margin-auto">Welcome to the Admin Dashboard</h1>
         <div class="product-list">
             <app-product-list></app-product-list>
+            <app-create-product></app-create-product>
         </div>
       </div>
       <ng-template #notAdmin>
         <div class="product-card">
           <div class="product-card-left">
-            <router-outlet></router-outlet>
           </div>
           <div class="product-card-right">
             <app-product-card *ngIf="user && user.uid"></app-product-card>
@@ -22,7 +22,7 @@
   </ng-container>
   <ng-template #notAuthenticated>
     <div class="component-body">
-      <p class="margin-auto font-primary">Log in to explore our product catalogue:</p>
+
     </div>
   </ng-template>
 </div>

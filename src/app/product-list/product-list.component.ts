@@ -3,6 +3,7 @@ import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
@@ -24,7 +25,8 @@ export class ProductListComponent implements OnInit {
   // @ts-ignore
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.productService.getProductCollection().subscribe((products) => {
@@ -32,5 +34,9 @@ export class ProductListComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Product>(this.products);
       this.dataSource.paginator = this.paginator;
     });
+  }
+
+  onCreateProduct() {
+    this.router.navigate(['/create-product'])
   }
 }

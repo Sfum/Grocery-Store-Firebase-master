@@ -1,15 +1,10 @@
 import {Component, Inject} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {FormsModule} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-account',
-  standalone: true,
-  imports: [
-    FormsModule
-  ],
   templateUrl: './user-account.component.html',
   styleUrl: './user-account.component.sass'
 })

@@ -1,6 +1,8 @@
+<div class="container margin-auto font-primary">Create New Product</div>
+
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
 
-  <label for="productName" class="font-primary">Product Name:</label>
+  <label for="productName" class="font-secondary">Product Name:</label>
   <input type="text" id="productName" formControlName="product_name" required>
 
   <label for="productDescription" class="font-secondary">Product Description:</label>

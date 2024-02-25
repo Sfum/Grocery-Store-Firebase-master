@@ -16,9 +16,6 @@ const routes: Routes = [
   {path: 'login', component: UserAccountComponent},
   {path: 'register', component: SignUpComponent},
 ];
-// const routeOptions: ExtraOptions = {
-//   onSameUrlNavigation: 'reload'
-// };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

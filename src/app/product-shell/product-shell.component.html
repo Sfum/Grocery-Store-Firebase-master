@@ -10,10 +10,11 @@
       <ng-template #notAdmin>
         <div class="product-card">
           <div class="product-card-left">
-            <app-product-card *ngIf="user && user.uid"></app-product-card>
+            <router-outlet></router-outlet>
           </div>
           <div class="product-card-right">
-            <router-outlet></router-outlet>
+            <app-product-card *ngIf="user && user.uid"></app-product-card>
+
           </div>
         </div>
       </ng-template>

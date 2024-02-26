@@ -7,4 +7,5 @@ export interface Product {
   supplierId: number,
   categoryId: number,
   product_image: string,
+  product_price: number
 }

@@ -3,23 +3,26 @@
     <div class="product-card__shell">
       <div class="product-card-bottom__wrapper">
         <div class="product-card__left">
-          <img class="product-card__image" [src]="product.product_image" width="130px" height="130px" alt="">
+          <img class="product-card__image" [src]="product.product_image" width="140px" height="140px" alt="">
           <div class="button__field">
-            <button mat-raised-button class="font-small" [routerLink]="['/', 'view', product.productId]">Details</button>
-            <button mat-raised-button class="font-small" [routerLink]="['/', 'view', product.productId]">
-              <mat-icon class="icon">shopping_cart</mat-icon>
+            <button mat-raised-button class="button-main font-small" [routerLink]="['/', 'view', product.productId]">Details</button>
+            <button mat-raised-button class="button-main font-small" [routerLink]="['/', 'view', product.productId]">
+              <mat-icon class="icon-cart">shopping_cart</mat-icon>
             </button>
+
           </div>
         </div>
+
         <div class="product-card__right">
-          <span class="font-primary">{{ product.product_name | slice:0:23 }}...</span>
+          <span class="product_title font-primary">{{ product.product_name | slice:0:23 }}...</span>
+          <div class="product-card__line"></div>
+          <span class="product_subtitle font-secondary">{{ product.product_description | slice:0:120 }}</span>
           <hr class="product-card__line">
-          <span class="font-secondary">{{ product.product_description | slice:0:120 }}</span>
+          <span class="product_subtitle-small font-secondary">{{ product.supplierId }}</span>
           <hr class="product-card__line">
-          <span class="font-secondary">Manufactured: {{ product.supplierId }}</span>
+          <span class="product_subtitle-vsmall font-secondary">{{ product.categoryId }}</span>
           <hr class="product-card__line">
-          <span class="font-secondary">Category: {{ product.categoryId }}</span>
-          <hr class="product-card__line">
+          <span class="product_subtitle-xsmall font-small">Add to cart: ${{product.product_price}}</span>
           <div class="icon__list">
             <mat-icon class="icon">favorite</mat-icon>
             <mat-icon class="icon">list</mat-icon>

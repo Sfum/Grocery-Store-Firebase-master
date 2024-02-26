@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {MatCard} from "@angular/material/card";
 import {MatOption} from "@angular/material/autocomplete";
@@ -12,6 +12,8 @@ import {MatSlider, MatSliderRangeThumb} from "@angular/material/slider";
 import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import firebase from 'firebase/compat/app';
 import {Category} from "../../models/category";
+import {MatCheckbox} from "@angular/material/checkbox";
+import {Product} from "../../models/product";
 
 @Component({
   selector: 'app-product-filter-details',
@@ -27,12 +29,13 @@ import {Category} from "../../models/category";
     MatSliderRangeThumb,
     NgIf,
     NgForOf,
-    AsyncPipe
+    AsyncPipe,
+    MatCheckbox
   ],
   templateUrl: './product-filter-details.component.html',
   styleUrl: './product-filter-details.component.sass'
 })
-export class ProductFilterDetailsComponent {
+export class ProductFilterDetailsComponent{
 
   user$: Observable<firebase.User>;
 
@@ -53,5 +56,4 @@ export class ProductFilterDetailsComponent {
   optionCategorySelected(selectedCategoryId: number) {
     this.categorySelectedEvent.emit(selectedCategoryId);
   }
-
 }

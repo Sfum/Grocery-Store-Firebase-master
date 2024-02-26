@@ -13,6 +13,9 @@ export class ProductEditComponent implements OnInit {
   // @ts-ignore
   productId: string;
 
+  selectedSupplierId: number | undefined;
+  selectedCategoryId: number | undefined;
+
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
@@ -24,16 +27,27 @@ export class ProductEditComponent implements OnInit {
       productId: ['', Validators.required],
       product_name: ['', Validators.required],
       product_description: ['', Validators.required],
-      seqNo: [null, Validators.required],
-      supplierId: [null, Validators.required],
+      seqNo: ['', Validators.required],
+      supplierId: ['', Validators.required],
+      categoryId: ['', Validators.required],
       product_image: ['', Validators.required],
     });
   }
+
+  productEdit$ = this.productService.filteredProducts$
 
   ngOnInit(): void {
     // @ts-ignore
     this.productId = this.route.snapshot.paramMap.get('productId');
     this.loadProduct();
+  }
+
+  optionSupplierSelected(selectedSupplierId: number) {
+    return this.productService.optionSupplierSelected(selectedSupplierId);
+  }
+
+  optionCategorySelected(selectedCategoryId: number) {
+    return this.productService.optionCategorySelected(selectedCategoryId);
   }
 
   loadProduct() {

@@ -14,8 +14,14 @@
 
   <!-- Supplier ID Column -->
   <ng-container matColumnDef="supplierId">
-    <mat-header-cell *matHeaderCellDef> Supplier ID </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Supplier </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.supplierId }} </mat-cell>
+  </ng-container>
+
+  <!-- Category ID Column -->
+  <ng-container matColumnDef="categoryId">
+    <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.categoryId }} </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

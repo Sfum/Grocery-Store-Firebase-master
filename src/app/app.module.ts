@@ -16,7 +16,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {MatCard} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
-import {MatInput} from "@angular/material/input";
+import {MatFormField, MatInput} from "@angular/material/input";
 
 import {ProductListComponent} from "./product-list/product-list.component";
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -46,6 +46,7 @@ import {UserAccountComponent} from "./auth/user-account/user-account.component";
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {LogoutComponent} from "./auth/logout/logout.component";
 import {ProductFilterComponent} from "./product-filter/product-filter.component";
+import {MatOption, MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -63,38 +64,41 @@ import {ProductFilterComponent} from "./product-filter/product-filter.component"
     NavigationComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule,
-        RouterLink,
-        ReactiveFormsModule,
-        AppRoutingModule,
-        MatCard,
-        MatButton,
-        MatInput,
-        MatHeaderCell,
-        MatCell,
-        MatTable,
-        MatColumnDef,
-        MatHeaderCellDef,
-        MatCellDef,
-        MatHeaderRow,
-        MatRow,
-        MatHeaderRowDef,
-        MatRowDef,
-        MatPaginatorModule,
-        MatTableModule,
-        MatIcon,
-        MatDrawerContainer,
-        MatDrawer,
-        AngularFireAuthModule,
-        AngularFireStorageModule,
-        AngularFireDatabaseModule,
-        MatDialogModule,
-        FormsModule,
-        ProductFilterComponent,
-    ],
+  imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    RouterLink,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    MatCard,
+    MatButton,
+    MatInput,
+    MatHeaderCell,
+    MatCell,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatHeaderRow,
+    MatRow,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatPaginatorModule,
+    MatTableModule,
+    MatIcon,
+    MatDrawerContainer,
+    MatDrawer,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    MatDialogModule,
+    FormsModule,
+    ProductFilterComponent,
+    MatFormField,
+    MatSelect,
+    MatOption,
+  ],
   providers: [
     provideAnimationsAsync()
   ],

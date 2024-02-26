@@ -144,4 +144,7 @@ export class ProductService {
     }))
   );
 
+  getFilteredProductCollection() {
+    return this.productsArrayFiltered$
+  }
 }

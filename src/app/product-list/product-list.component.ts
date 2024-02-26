@@ -14,7 +14,8 @@ export class ProductListComponent implements OnInit {
   displayedColumns: string[] = [
     'productId',
     'product_name',
-    'supplierId'
+    'supplierId',
+    'categoryId'
   ];
   // @ts-ignore
   dataSource: MatTableDataSource<Product>;
@@ -27,7 +28,7 @@ export class ProductListComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit(): void {
-    this.productService.getProductCollection().subscribe((products) => {
+    this.productService.getFilteredProductCollection().subscribe((products) => {
       this.products = products;
       this.dataSource = new MatTableDataSource<Product>(this.products);
       this.dataSource.paginator = this.paginator;

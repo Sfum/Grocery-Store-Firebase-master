@@ -1,5 +1,6 @@
 <div class="container margin-auto font-primary">Edit Product</div>
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()"
+      *ngIf="(productEdit$ | async) as asyncFilterPipe">
 
   <label for="productName">Product Name:</label>
   <input matInput type="text" id="productName" formControlName="product_name" required>
@@ -10,8 +11,36 @@
   <label for="seqNo">Sequence Number:</label>
   <input matInput type="number" id="seqNo" formControlName="seqNo" required>
 
-  <label for="supplierId">Supplier ID:</label>
-  <input matInput type="number" id="supplierId" formControlName="supplierId" required>
+  <mat-form-field class="form-control">
+    <mat-label> Select Supplier </mat-label>
+    <mat-select
+      [(value)]="selectedSupplierId"
+      (change)="optionSupplierSelected($any($event.target).value)"
+      formControlName="supplierId"
+    >
+      <mat-option
+        *ngFor="let element of asyncFilterPipe.suppliers"
+        [value]="element.id"
+      >
+        {{ element.supplier_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="form-control">
+    <mat-label> Select Category </mat-label>
+    <mat-select
+      [(value)]="selectedCategoryId"
+      (change)="optionCategorySelected($any($event.target).value)"
+      formControlName="categoryId"
+    >
+      <mat-option
+        *ngFor="let element of asyncFilterPipe.categories"
+        [value]="element.id"
+      >
+        {{ element.category_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <label for="productImage">Product Image URL:</label>
   <input matInput type="text" id="productImage" formControlName="product_image" required>

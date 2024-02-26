@@ -12,19 +12,6 @@
     <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.productId]"> {{ product.product_name }} </mat-cell>
   </ng-container>
 
-  <!-- Product Description Column -->
-  <ng-container matColumnDef="product_description">
-    <mat-header-cell *matHeaderCellDef> Product Description </mat-header-cell>
-    <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.productId]"> {{ product.product_description }} </mat-cell>
-  </ng-container>
-
-
-  <!-- Sequence Number Column -->
-  <ng-container matColumnDef="seqNo">
-    <mat-header-cell *matHeaderCellDef> Sequence Number </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.seqNo }} </mat-cell>
-  </ng-container>
-
   <!-- Supplier ID Column -->
   <ng-container matColumnDef="supplierId">
     <mat-header-cell *matHeaderCellDef> Supplier ID </mat-header-cell>

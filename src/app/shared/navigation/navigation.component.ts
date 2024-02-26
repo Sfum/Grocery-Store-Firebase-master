@@ -1,13 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MatButton} from "@angular/material/button";
-import {RouterLink} from "@angular/router";
 import {UserAccountComponent} from "../../auth/user-account/user-account.component";
-import {LogoutComponent} from "../../auth/logout/logout.component";
 import {MatDialog} from "@angular/material/dialog";
-import {async, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import firebase from "firebase/compat";
 import {AuthService} from "../../services/auth.service";
-import {AsyncPipe, NgIf} from "@angular/common";
 import {SignUpComponent} from "../../auth/sign-up/sign-up.component";
 
 @Component({

@@ -4,6 +4,7 @@ export interface Product {
   product_name: string,
   product_description: string,
   seqNo: number
-  supplierId: number
+  supplierId: number,
+  categoryId: number,
   product_image: string,
 }

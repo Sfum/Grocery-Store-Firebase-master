@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
@@ -45,6 +45,7 @@ import {NavigationComponent} from "./shared/navigation/navigation.component";
 import {UserAccountComponent} from "./auth/user-account/user-account.component";
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {LogoutComponent} from "./auth/logout/logout.component";
+import {ProductFilterComponent} from "./product-filter/product-filter.component";
 
 @NgModule({
   declarations: [
@@ -62,43 +63,45 @@ import {LogoutComponent} from "./auth/logout/logout.component";
     NavigationComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    RouterLink,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    MatCard,
-    MatButton,
-    MatInput,
-    MatHeaderCell,
-    MatCell,
-    MatTable,
-    MatColumnDef,
-    MatHeaderCellDef,
-    MatCellDef,
-    MatHeaderRow,
-    MatRow,
-    MatHeaderRowDef,
-    MatRowDef,
-    MatPaginatorModule,
-    MatTableModule,
-    MatIcon,
-    MatDrawerContainer,
-    MatDrawer,
-    AngularFireAuthModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    MatDialogModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        RouterLink,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        MatCard,
+        MatButton,
+        MatInput,
+        MatHeaderCell,
+        MatCell,
+        MatTable,
+        MatColumnDef,
+        MatHeaderCellDef,
+        MatCellDef,
+        MatHeaderRow,
+        MatRow,
+        MatHeaderRowDef,
+        MatRowDef,
+        MatPaginatorModule,
+        MatTableModule,
+        MatIcon,
+        MatDrawerContainer,
+        MatDrawer,
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        MatDialogModule,
+        FormsModule,
+        ProductFilterComponent,
+    ],
   providers: [
     provideAnimationsAsync()
   ],
   exports: [
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }

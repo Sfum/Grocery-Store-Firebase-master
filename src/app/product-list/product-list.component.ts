@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,8 +14,6 @@ export class ProductListComponent implements OnInit {
   displayedColumns: string[] = [
     'productId',
     'product_name',
-    'product_description',
-    'seqNo',
     'supplierId'
   ];
   // @ts-ignore

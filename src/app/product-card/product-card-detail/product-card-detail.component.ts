@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Product} from "../../models/product";
+import {Supplier} from "../../models/supplier";
 
 @Component({
   selector: 'app-product-card-detail',
@@ -9,6 +10,7 @@ import {Product} from "../../models/product";
 export class ProductCardDetailComponent {
 
   @Input() product!: Product
+  @Input() supplier!: Supplier
 
 
 

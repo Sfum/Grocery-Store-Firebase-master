@@ -4,16 +4,17 @@
       <div *ngIf="isAdmin; else notAdmin">
         <h1 class="margin-auto">Welcome to the Admin Dashboard</h1>
         <div class="product-list">
-            <app-product-list></app-product-list>
-            <app-create-product></app-create-product>
+            <app-product-list class="container"></app-product-list>
+            <app-create-product class="container"></app-create-product>
         </div>
       </div>
       <ng-template #notAdmin>
         <div class="product-card">
-          <div class="product-card-left">
+          <div class="product-card-left container">
+           <app-product-filter class="container"></app-product-filter>
           </div>
-          <div class="product-card-right">
-            <app-product-card *ngIf="user && user.uid"></app-product-card>
+          <div class="product-card-right container-inner">
+            <app-product-card *ngIf="user && user.uid" class="container"></app-product-card>
 
           </div>
         </div>
@@ -22,7 +23,8 @@
   </ng-container>
   <ng-template #notAuthenticated>
     <div class="component-body">
-
+       <div class="margin-auto font-primary">Welcome to our store! Please, login to start browsing</div>
+      <app-product-card></app-product-card>
     </div>
   </ng-template>
 </div>

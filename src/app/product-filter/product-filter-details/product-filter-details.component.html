@@ -1,28 +1,28 @@
 
-<!--<div class="sidebar__container" *ngIf="filterCategoryField$ | async as category">-->
-<!--  <mat-form-field appearance="fill">-->
-<!--    <mat-select-->
-<!--      class="sidebar__form&#45;&#45;control"-->
-<!--      (selectionChange)="optionCategorySelected($any($event.value))"-->
-<!--    >-->
-<!--      <mat-option value="0">- All categories -</mat-option>-->
-<!--      <mat-option-->
-<!--        *ngFor="let category of filterCategoryField$ | async as category"-->
-<!--        [value]="category.id"-->
-<!--      >-->
-<!--        {{ category.category_name }}-->
-<!--      </mat-option>-->
-<!--    </mat-select>-->
-<!--  </mat-form-field>-->
-<!--</div>-->
+<div class="sidebar__container">
+  <mat-form-field appearance="fill">
+    <mat-select
+      class="sidebar__form--control"
+      (selectionChange)="optionCategorySelected($any($event.value))"
+    >
+      <mat-option value="0">- All categories -</mat-option>
+      <mat-option
+        *ngFor="let categoryItem of filterCategoryField$ | async as category"
+        [value]="categoryItem.id"
+      >
+        {{ categoryItem.category_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
-<div class="sidebar__container" *ngIf="filterField$ | async as supplierItem">
+<div class="sidebar__container">
   <mat-form-field appearance="fill">
     <mat-select
       class="sidebar__form--control"
       (selectionChange)="optionSupplierSelected($any($event.value))"
     >
-      <mat-option value="0">- All categories -</mat-option>
+      <mat-option value="0">- All suppliers</mat-option>
       <mat-option
         *ngFor="let supplierItem of filterField$ | async as supplier"
         [value]="supplierItem.id"

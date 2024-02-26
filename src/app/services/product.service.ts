@@ -87,7 +87,7 @@ export class ProductService {
   );
 
   // Method to handle changing the selected category
-  onChangedCategory(selectedCategoryId: number) {
+  optionCategorySelected(selectedCategoryId: number) {
     this.supplierSelectedSubject.next(0);
     this.categorySelectedSubject.next(0);
     this.categorySelectedSubject.next(+selectedCategoryId);

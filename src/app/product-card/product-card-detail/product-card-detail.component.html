@@ -16,9 +16,9 @@
           <hr class="product-card__line">
           <span class="font-secondary">{{ product.product_description | slice:0:120 }}</span>
           <hr class="product-card__line">
-          <span class="font-secondary">Manufactured by {{ product.supplierId }}</span>
+          <span class="font-secondary">Manufactured: {{ product.supplierId }}</span>
           <hr class="product-card__line">
-          <span class="font-secondary">ID: {{ product.productId }}</span>
+          <span class="font-secondary">Category: {{ product.categoryId }}</span>
           <hr class="product-card__line">
           <div class="icon__list">
             <mat-icon class="icon">favorite</mat-icon>

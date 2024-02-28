@@ -16,7 +16,8 @@ export class ProductListComponent implements OnInit {
     'product_name',
     'product_price',
     'supplierId',
-    'categoryId'
+    'categoryId',
+    'quantity'
   ];
   // @ts-ignore
   dataSource: MatTableDataSource<Product>;

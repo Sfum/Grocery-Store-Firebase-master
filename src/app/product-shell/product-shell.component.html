@@ -1,6 +1,9 @@
 <div class="component-body">
+
   <ng-container *ngIf="user$ | async as user; else notAuthenticated">
+
     <div class="component-body">
+
       <div *ngIf="isAdmin; else notAdmin">
         <h1 class="margin-auto">Welcome to the Admin Dashboard</h1>
         <div class="product-list">
@@ -8,6 +11,7 @@
             <app-create-product class="container"></app-create-product>
         </div>
       </div>
+
       <ng-template #notAdmin>
         <div class="product-card">
           <div class="product-card-left container">
@@ -15,16 +19,18 @@
           </div>
           <div class="product-card-right container-inner">
             <app-product-card *ngIf="user && user.uid" class="container"></app-product-card>
-
           </div>
         </div>
       </ng-template>
+
     </div>
   </ng-container>
+
   <ng-template #notAuthenticated>
     <div class="component-body">
        <div class="margin-auto font-primary">Welcome to our store! Please, login to start browsing</div>
       <app-product-card></app-product-card>
     </div>
   </ng-template>
+
 </div>

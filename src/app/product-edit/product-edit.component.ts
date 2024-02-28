@@ -31,6 +31,8 @@ export class ProductEditComponent implements OnInit {
       supplierId: ['', Validators.required],
       categoryId: ['', Validators.required],
       product_image: ['', Validators.required],
+      quantity: ['', Validators.required],
+
     });
   }
 

@@ -12,7 +12,7 @@
     <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.productId]"> {{ product.product_name }} </mat-cell>
   </ng-container>
 
-  <!-- Product Name Column -->
+  <!-- Product Price Column -->
   <ng-container matColumnDef="product_price">
     <mat-header-cell *matHeaderCellDef> Product Price </mat-header-cell>
     <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.product_price]"> {{ product.product_price }} </mat-cell>
@@ -28,6 +28,11 @@
   <ng-container matColumnDef="categoryId">
     <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.categoryId }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.quantity }} </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -8,4 +8,6 @@ export interface Product {
   categoryId: number,
   product_image: string,
   product_price: number
+  quantity: number,
+  in_cart: boolean
 }

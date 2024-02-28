@@ -3,13 +3,13 @@
   <!-- Product ID Column -->
   <ng-container matColumnDef="productId">
     <mat-header-cell *matHeaderCellDef> Product ID </mat-header-cell>
-    <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.productId]"> {{ product.productId }} </mat-cell>
+    <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', 'edit', product.productId]"> {{ product.productId }} </mat-cell>
   </ng-container>
 
   <!-- Product Name Column -->
   <ng-container matColumnDef="product_name">
     <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
-    <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.productId]"> {{ product.product_name }} </mat-cell>
+    <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', 'edit', product.productId]"> {{ product.product_name }} </mat-cell>
   </ng-container>
 
   <!-- Product Price Column -->

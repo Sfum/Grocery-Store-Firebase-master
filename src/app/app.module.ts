@@ -47,6 +47,13 @@ import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {LogoutComponent} from "./auth/logout/logout.component";
 import {ProductFilterComponent} from "./product-filter/product-filter.component";
 import {MatOption, MatSelect} from "@angular/material/select";
+import {WishlistComponent} from "./wishlist/wishlist.component";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
+import {WishlistDetailComponent} from "./wishlist/wishlist-detail/wishlist-detail.component";
+import {ShoppingCartDetailComponent} from "./shopping-cart/shopping-cart-detail/shopping-cart-detail.component";
+import {MatBadge} from "@angular/material/badge";
+
+import {ProductFilterDetailsComponent} from "./product-filter/product-filter-details/product-filter-details.component";
 
 @NgModule({
   declarations: [
@@ -62,6 +69,12 @@ import {MatOption, MatSelect} from "@angular/material/select";
     SignUpComponent,
     LogoutComponent,
     NavigationComponent,
+    WishlistComponent,
+    ShoppingCartComponent,
+    WishlistDetailComponent,
+    ShoppingCartDetailComponent,
+    ProductFilterComponent,
+    ProductFilterDetailsComponent
 
   ],
   imports: [
@@ -94,10 +107,11 @@ import {MatOption, MatSelect} from "@angular/material/select";
     AngularFireDatabaseModule,
     MatDialogModule,
     FormsModule,
-    ProductFilterComponent,
     MatFormField,
     MatSelect,
     MatOption,
+    MatBadge,
+
   ],
   providers: [
     provideAnimationsAsync()

@@ -6,6 +6,8 @@ import {ProductViewComponent} from "./product-view/product-view.component";
 import {UserAccountComponent} from "./auth/user-account/user-account.component";
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {ProductShellComponent} from "./product-shell/product-shell.component";
+import {WishlistComponent} from "./wishlist/wishlist.component";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 // import {AuthGuard} from "@angular/fire/auth-guard";
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path: 'create-product', component: CreateProductComponent},
   {path: 'login', component: UserAccountComponent},
   {path: 'register', component: SignUpComponent},
+  {path: 'wishlist', component: WishlistComponent},
+  {path: 'shopping-cart', component: ShoppingCartComponent},
 ];
 
 @NgModule({

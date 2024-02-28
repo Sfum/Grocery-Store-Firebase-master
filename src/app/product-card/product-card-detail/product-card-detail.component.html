@@ -6,8 +6,11 @@
           <img class="product-card__image" [src]="product.product_image" width="140px" height="140px" alt="">
           <div class="button__field">
             <button mat-raised-button class="button-main font-small" [routerLink]="['/', 'view', product.productId]">Details</button>
-            <button mat-raised-button class="button-main font-small" [routerLink]="['/', 'view', product.productId]">
+            <button mat-raised-button class="button-main font-small" (click)="addToCart(product)" [routerLink]="['/']">
               <mat-icon class="icon-cart">shopping_cart</mat-icon>
+            </button>
+            <button mat-raised-button class="button-main font-small" (click)="addToWishlist(product)" [routerLink]="['/']">
+              <mat-icon class="icon-cart">favorite</mat-icon>
             </button>
 
           </div>
@@ -24,9 +27,18 @@
           <hr class="product-card__line">
           <span class="product_subtitle-xsmall font-small">Add to cart: ${{product.product_price}}</span>
           <div class="icon__list">
-            <mat-icon class="icon">favorite</mat-icon>
-            <mat-icon class="icon">list</mat-icon>
-            <mat-icon class="icon">phone</mat-icon>
+            <mat-icon
+              class="product-card__icon"
+              (click)="addToWishlist(product)"
+              *ngIf="product.quantity > 0"
+            >favorite_border
+            </mat-icon>
+<!--            <mat-icon-->
+<!--              class="product-card__icon"-->
+<!--              (click)="addToCompare(product)"-->
+<!--              *ngIf="product.quantity > 0; else reMindMe"-->
+<!--            >compare_arrows-->
+<!--            </mat-icon>-->
           </div>
         </div>
       </div>

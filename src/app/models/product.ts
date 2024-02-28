@@ -10,4 +10,5 @@ export interface Product {
   product_price: number
   quantity: number,
   in_cart: boolean
+  in_wishlist: boolean
 }

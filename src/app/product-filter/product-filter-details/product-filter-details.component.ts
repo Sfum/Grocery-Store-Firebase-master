@@ -14,24 +14,11 @@ import firebase from 'firebase/compat/app';
 import {Category} from "../../models/category";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {Product} from "../../models/product";
+import {ShoppingCartComponent} from "../../shopping-cart/shopping-cart.component";
+import {WishlistComponent} from "../../wishlist/wishlist.component";
 
 @Component({
   selector: 'app-product-filter-details',
-  standalone: true,
-  imports: [
-    MatButton,
-    MatCard,
-    MatOption,
-    MatFormField,
-    MatSelect,
-    FormsModule,
-    MatSlider,
-    MatSliderRangeThumb,
-    NgIf,
-    NgForOf,
-    AsyncPipe,
-    MatCheckbox
-  ],
   templateUrl: './product-filter-details.component.html',
   styleUrl: './product-filter-details.component.sass'
 })

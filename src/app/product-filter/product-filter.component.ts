@@ -12,12 +12,6 @@ import {CategoryService} from "../services/category.service";
 
 @Component({
   selector: 'app-product-filter',
-  standalone: true,
-  imports: [
-    MatCard,
-    MatButton,
-    ProductFilterDetailsComponent
-  ],
   templateUrl: './product-filter.component.html',
   styleUrl: './product-filter.component.sass'
 })
@@ -34,8 +28,6 @@ export class ProductFilterComponent {
     this.filterField$ = this.supplierService.getSupplierCollection()
     this.filterCategoryField$ = this.categoryService.getCategoryCollection()
   }
-
-
 
   optionSupplierSelected(product: any) {
     return this.productService.optionSupplierSelected(product)

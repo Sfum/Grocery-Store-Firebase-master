@@ -15,7 +15,7 @@
   <!-- Product Price Column -->
   <ng-container matColumnDef="product_price">
     <mat-header-cell *matHeaderCellDef> Product Price </mat-header-cell>
-    <mat-cell class="cell_hover" *matCellDef="let product" [routerLink]="['/', product.product_price]"> {{ product.product_price }} </mat-cell>
+    <mat-cell class="cell_hover" *matCellDef="let product"> {{ product.product_price }} </mat-cell>
   </ng-container>
 
   <!-- Supplier ID Column -->

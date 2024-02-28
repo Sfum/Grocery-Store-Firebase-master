@@ -1,50 +1,39 @@
 .cart__items-container
   display: grid
-  grid-template-columns: 40% 60%
+  grid-template-rows: 50% 50%
   margin: 40px auto 40px
   padding: 30px
   border-radius: var(--border-radius-sm)
 
-
-.cart__inner-wrapper
-  margin: var(--margin-sm)
-
+.cart__info
+  grid-row: 2/3
 
 .cart__product-image
-  grid-column: 1/2
-  margin: var(--margin-md)
+  grid-row: 1/2
+  margin: 10px
 
 
 .cart__label-wrapper
-  margin: 30px
+  margin: 10px
   grid-column: 2/3
 
 .cart__badge
   position: absolute
-  right: 500px
-  bottom: 140px
+  right: 100px
+  bottom: 190px
 
 
 .cart__card_price-amount
-  font-size: 28px
+  font-size: 16px
   position: absolute
   right: 4rem
   bottom: 6.5rem
 
-
-.cart__remove-product
-  grid-column: 2/3
-
-
 .cart__remove-button
-  margin: var(--margin-md)
   position: absolute
-  left: 460px
-  top: 170px
-
-
+  left: 90px
+  top: 220px
 
 .cart__wishlist-button
-  margin: var(--margin-sm)
   position: relative
 

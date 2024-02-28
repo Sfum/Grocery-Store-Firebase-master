@@ -4,10 +4,11 @@
   <div class="cart__inner-wrapper">
     <img class="cart__product-image"
          [src]="product.product_image"
-         height="120"
+         height="90"
+         width="90"
          alt=""/>
   </div>
-
+  <div class="cart__info">
   <mat-icon class="cart__badge"
             [matBadge]="product.quantity"
             matBadgeSize="large"
@@ -43,5 +44,6 @@
             (click)="removeFromCart(product)">
       <mat-icon>delete_forever</mat-icon>
     </button>
+  </div>
   </div>
 </mat-card>

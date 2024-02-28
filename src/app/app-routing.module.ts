@@ -11,7 +11,7 @@ import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 // import {AuthGuard} from "@angular/fire/auth-guard";
 
 const routes: Routes = [
-  {path: '**', component: ProductShellComponent},
+  {path: '', component: ProductShellComponent},
   {path: 'view/:productId', component: ProductViewComponent},
   {path: ':productId', component: ProductEditComponent},
   {path: 'create-product', component: CreateProductComponent},

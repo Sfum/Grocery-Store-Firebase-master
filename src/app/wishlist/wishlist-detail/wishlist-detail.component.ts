@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product";
-import {Router, RouterLink} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-wishlist-detail',

@@ -15,7 +15,7 @@ import {ProductViewComponent} from './product-view/product-view.component';
 import {AppRoutingModule} from './app-routing.module';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {MatCard} from "@angular/material/card";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatFabButton} from "@angular/material/button";
 import {MatFormField, MatInput} from "@angular/material/input";
 
 import {ProductListComponent} from "./product-list/product-list.component";
@@ -111,6 +111,7 @@ import {ProductFilterDetailsComponent} from "./product-filter/product-filter-det
     MatSelect,
     MatOption,
     MatBadge,
+    MatFabButton,
 
   ],
   providers: [

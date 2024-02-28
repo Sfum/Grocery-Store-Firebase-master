@@ -12,7 +12,7 @@ export class ProductCardDetailComponent {
   @Input() product!: Product
   @Input() supplier!: Supplier
 
-  @Output() addToCartEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Output() addToCartEvent: EventEmitter<Product> = new EventEmitter<Product>();
   @Output() addToWishlistEvent: EventEmitter<any> = new EventEmitter<any>();
   @Output() addToCompareEvent: EventEmitter<any> = new EventEmitter<any>();
 

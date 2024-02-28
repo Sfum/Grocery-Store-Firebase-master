@@ -31,17 +31,17 @@ export class CartService {
     return this.products;
   }
   saveCart(): void {
-    localStorage.setItem('total_price', JSON.stringify(this.products));
+    localStorage.setItem('shopping_cart', JSON.stringify(this.products));
   }
   loadCart(): void {
     this.products =
-      JSON.parse(localStorage.getItem('total_price') as any) || [];
+      JSON.parse(localStorage.getItem('shopping_cart') as any) || [];
   }
   productInCart(product: any): boolean {
-    return this.products.findIndex((x: any) => x.id === product.id) > -1;
+    return this.products.findIndex((x: any) => x.productId === product.productId) > -1;
   }
   removeProduct(product: any) {
-    const index = this.products.findIndex((x: any) => x.id === product.id);
+    const index = this.products.findIndex((x: any) => x.productId === product.productId);
 
     if (index > -1) {
       this.products.splice(index, 1);

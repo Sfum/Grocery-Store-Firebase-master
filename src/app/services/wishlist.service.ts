@@ -14,8 +14,8 @@ export class WishlistService {
       product.quantity = 1;
       this.addProductToWishlist(product);
       this.products = [...this.getProduct()];
-      this.snackbarService.showSnackbar(`\`${product.product_name}\` by \`${product.supplierId}\` added to Wishlist`);
       product.in_wishlist = !product.in_wishlist;
+      this.snackbarService.showSnackbar(`\`${product.product_name}\` by \`${product.supplierId}\` added to Wishlist`);
     } else {
       this.snackbarService.showSnackbar('Item is Already In Wishlist');
     }
@@ -35,10 +35,10 @@ export class WishlistService {
       JSON.parse(localStorage.getItem('wishlist_items') as any) || [];
   }
   productInCart(product: any): boolean {
-    return this.products.findIndex((x: any) => x.id === product.id) > -1;
+    return this.products.findIndex((x: any) => x.productId === product.productId) > -1;
   }
   removeProduct(product: any) {
-    const index = this.products.findIndex((x: any) => x.id === product.id);
+    const index = this.products.findIndex((x: any) => x.productId === product.productId);
 
     if (index > -1) {
       this.products.splice(index, 1);

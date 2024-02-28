@@ -31,11 +31,11 @@ export class CartService {
     return this.products;
   }
   saveCart(): void {
-    localStorage.setItem('shopping_cart', JSON.stringify(this.products));
+    localStorage.setItem('shopping-cart', JSON.stringify(this.products));
   }
   loadCart(): void {
     this.products =
-      JSON.parse(localStorage.getItem('shopping_cart') as any) || [];
+      JSON.parse(localStorage.getItem('shopping-cart') as any) || [];
   }
   productInCart(product: any): boolean {
     return this.products.findIndex((x: any) => x.productId === product.productId) > -1;
@@ -47,6 +47,9 @@ export class CartService {
       this.products.splice(index, 1);
       this.saveCart();
     }
+  }
+  clearProducts() {
+    localStorage.clear();
   }
   addWishlistToCart(product: any) {
     if (!this.productInCart(product)) {

@@ -55,6 +55,8 @@ import {MatBadge} from "@angular/material/badge";
 
 import {ProductFilterDetailsComponent} from "./product-filter/product-filter-details/product-filter-details.component";
 
+import { NgxPayPalModule } from 'ngx-paypal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -112,6 +114,7 @@ import {ProductFilterDetailsComponent} from "./product-filter/product-filter-det
     MatOption,
     MatBadge,
     MatFabButton,
+    NgxPayPalModule
 
   ],
   providers: [

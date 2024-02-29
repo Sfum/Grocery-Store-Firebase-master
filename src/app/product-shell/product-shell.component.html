@@ -17,8 +17,11 @@
           <div class="product-card-left container">
            <app-product-filter class="container"></app-product-filter>
           </div>
-          <div class="product-card-right container-inner">
+          <div class="product-card-middle container-inner">
             <app-product-card *ngIf="user && user.uid" class="container"></app-product-card>
+          </div>
+          <div class="product-card-right container">
+            <app-shopping-cart class="container"></app-shopping-cart>
           </div>
         </div>
       </ng-template>

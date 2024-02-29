@@ -14,8 +14,7 @@ export class WishlistDetailComponent {
   @Output() removeWishlistEvent: EventEmitter<Product> = new EventEmitter<Product>();
 
   constructor(
-    public router: Router,
-    public location: Location) {
+    public router: Router) {
   }
 
   addProductToCart(product: Product) {

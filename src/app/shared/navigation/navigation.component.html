@@ -1,6 +1,11 @@
 <div class="container">
   <div>
   </div>
+  <div class="icon__field">
+    <mat-icon class="icons" [routerLink]="['/']">home</mat-icon>
+    <mat-icon class="icons" [routerLink]="['/wishlist']">favorites</mat-icon>
+    <mat-icon class="icons" [routerLink]="['/shopping-cart']">shopping_cart</mat-icon>
+  </div>
   <div class="auth-field">
     <button mat-raised-button class="nav-button" *ngIf="!(user$| async )" (click)="openDialog()">Login</button>
     <button mat-raised-button class="nav-button" *ngIf="!(user$| async )" (click)="openDialogRegister()">SignUp</button>

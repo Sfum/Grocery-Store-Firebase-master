@@ -1,16 +1,19 @@
 .container
+  display: grid
+  grid-template-columns: 10% 70% 20%
   background-color: green
   border-radius: 10px
-  display: grid
-  grid-template-columns: 1fr 1fr
-
-.navigation
-  grid-column: 1/2
-  margin: auto
 
 .auth-field
+  display: flex
+  flex-direction: row
+  grid-column: 3/4
   margin: 20px auto
-  grid-column: 2/3
+
+.icons
+  color: white
+  font-size: 25px
+  margin-right: 10px
 
 .button
   margin: 20px 0 20px 20px
@@ -18,4 +21,11 @@
 
 .nav-button
   width: 120px
-  margin-left: 10px
+  margin: 10px
+
+
+.icon__field
+  display: flex
+  flex-direction: row
+  grid-column: 1/2
+  margin: auto

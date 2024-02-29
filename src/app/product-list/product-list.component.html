@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="button_wrapper">
+    <button mat-raised-button [routerLink]="['/create-product']">Create Product</button>
+  </div>
 <mat-table [dataSource]="dataSource" >
   <!-- Product ID Column -->
   <ng-container matColumnDef="productId">

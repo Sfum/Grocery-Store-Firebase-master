@@ -17,7 +17,7 @@ export class ShoppingCartSuccessComponent {
 
   ngOnInit(): void {}
 
-  goBack() {
+  clear() {
     this.cartService.clearProducts();
     this.router.navigate(['/']);
   }

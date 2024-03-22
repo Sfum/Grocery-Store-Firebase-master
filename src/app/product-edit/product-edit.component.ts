@@ -40,7 +40,7 @@ export class ProductEditComponent implements OnInit {
 
   ngOnInit(): void {
     // @ts-ignore
-    this.productId = this.route.snapshot.paramMap.get('productId');
+    this.productId = this.route.snapshot.paramMap.get('id');
     this.loadProduct();
   }
 

@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import {Injectable} from '@angular/core';
+import {Product} from '../models/product';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {BehaviorSubject, catchError, combineLatest, EMPTY, map, Observable, shareReplay, throwError} from 'rxjs';
 import {CategoryService} from "./category.service";
 import {SupplierService} from "./supplier.service";
@@ -12,14 +12,30 @@ export class ProductService {
 
   constructor(private firestore: AngularFirestore,
               private categoryService: CategoryService,
-              private supplierService: SupplierService) {}
+              private supplierService: SupplierService) {
+  }
 
   getProductCollection(): Observable<any[]> {
     return this.firestore.collection('products').valueChanges();
   }
 
-  addProduct(product: Product): Promise<any> {
-    return this.firestore.collection('products').add(product);
+  addProduct(product: Product): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.firestore.collection('products')
+        .add(product)
+        .then(ref => {
+          product.id = ref.id;
+          this.firestore.collection('products')
+            .doc(ref.id).update({id: ref.id})
+            .then(() => {
+              resolve()
+            }).catch(error => {
+            reject(error);
+          });
+        }).catch(error => {
+        reject(error);
+      });
+    });
   }
 
   getProduct(productId: string): Observable<Product | undefined> {

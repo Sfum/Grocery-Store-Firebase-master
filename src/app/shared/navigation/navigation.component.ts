@@ -45,6 +45,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
     this.user$ = this.authService.user$;
   }
+
+
+
   signOut() {
     this.authService.signOut();
   }

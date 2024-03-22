@@ -19,4 +19,6 @@ export class ShoppingCartDetailComponent {
   addToWishlist(product: Product) {
     this.addToWishListEvent.emit(product);
   }
+
+
 }

@@ -12,8 +12,8 @@ import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 
 const routes: Routes = [
   {path: '', component: ProductShellComponent},
-  {path: 'view/:productId', component: ProductViewComponent},
-  {path: 'edit/:productId', component: ProductEditComponent},
+  {path: 'view/:id', component: ProductViewComponent},
+  {path: 'edit/:id', component: ProductEditComponent},
   {path: 'create-product', component: CreateProductComponent},
   {path: 'login', component: UserAccountComponent},
   {path: 'register', component: SignUpComponent},

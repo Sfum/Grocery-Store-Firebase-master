@@ -15,7 +15,7 @@ import {ProductViewComponent} from './product-view/product-view.component';
 import {AppRoutingModule} from './app-routing.module';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {MatCard} from "@angular/material/card";
-import {MatButton, MatFabButton} from "@angular/material/button";
+import {MatButton, MatFabButton, MatIconButton} from "@angular/material/button";
 import {MatFormField, MatInput} from "@angular/material/input";
 
 import {ProductListComponent} from "./product-list/product-list.component";
@@ -56,6 +56,7 @@ import {MatBadge} from "@angular/material/badge";
 import {ProductFilterDetailsComponent} from "./product-filter/product-filter-details/product-filter-details.component";
 
 import { NgxPayPalModule } from 'ngx-paypal';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -114,7 +115,11 @@ import { NgxPayPalModule } from 'ngx-paypal';
     MatOption,
     MatBadge,
     MatFabButton,
-    NgxPayPalModule
+    NgxPayPalModule,
+    MatMenu,
+    MatIconButton,
+    MatMenuItem,
+    MatMenuTrigger
 
   ],
   providers: [

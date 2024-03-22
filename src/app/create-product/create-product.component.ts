@@ -31,7 +31,6 @@ export class CreateProductComponent implements OnInit {
 
   onSubmit() {
 
-
     if (this.productForm.valid) {
       const productData = this.productForm.value;
       this.productService.addProduct(productData).then(() => {

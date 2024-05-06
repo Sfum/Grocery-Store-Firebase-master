@@ -16,8 +16,6 @@ import {CategoryService} from "../services/category.service";
   styleUrl: './product-filter.component.sass'
 })
 export class ProductFilterComponent {
-  user$: Observable<firebase.User>;
-
 
   filterField$: Observable<Supplier[]>
   filterCategoryField$: Observable<Category[]>

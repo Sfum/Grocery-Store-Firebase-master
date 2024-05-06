@@ -24,8 +24,6 @@ import {WishlistComponent} from "../../wishlist/wishlist.component";
 })
 export class ProductFilterDetailsComponent{
 
-  user$: Observable<firebase.User>;
-
 
   @Input() filterField$?: Observable<Supplier[]>
   @Input() filterCategoryField$?: Observable<Category[]>
